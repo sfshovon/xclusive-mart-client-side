@@ -85,7 +85,7 @@ const Navbar = () => {
               </span>
                 : 
                   <li className="md:ml-4">
-                    <CustomLink to="/signin" className="no-underline font-bold md:border-none md:mx-5 md:p-0 md:text-l p-2"> 
+                    <CustomLink to="/login" className="no-underline font-bold md:border-none md:mx-5 md:p-0 md:text-l p-2"> 
                     <span className="hover:text-teal-900 hover:border-b-2 hover:border-teal-500 hover:animation-ease-in-out hover:animatoin-pulse hover:duration-500 hover:text-xl"> Sign In </span> 
                     </CustomLink>
                   </li>
