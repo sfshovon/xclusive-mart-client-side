@@ -71,15 +71,15 @@ const UpdateProduct = () => {
           </div>
           <div>
             <h1 className="text-start mr-4 text-gray-700 font-bold mb-2">Regular Price</h1>
-            <input type="number" name="rPrice" className="border bg-gray-100 py-2 px-4 w-96 outline-none focus:ring-2 focus:ring-indigo-400 rounded" placeholder={product.item_price} />
+            <input type="number" name="rPrice" step="any" className="border bg-gray-100 py-2 px-4 w-96 outline-none focus:ring-2 focus:ring-indigo-400 rounded" placeholder={product.item_price} />
           </div>
           <div>
             <h1 className="text-start mr-4 text-gray-700 font-bold mb-2">Discount</h1>
-            <input type="number" name="dPrice" className="border bg-gray-100 py-2 px-4 w-96 outline-none focus:ring-2 focus:ring-indigo-400 rounded" placeholder={product.item_disc_price} />
+            <input type="number" name="dPrice" step="any" className="border bg-gray-100 py-2 px-4 w-96 outline-none focus:ring-2 focus:ring-indigo-400 rounded" placeholder={product.item_disc_price} />
           </div>
           <div>
             <h1 className="text-start mr-4 text-gray-700 font-bold mb-2">Final Price</h1>
-            <input type="number" name="fPrice" className="border bg-gray-100 py-2 px-4 w-96 outline-none focus:ring-2 focus:ring-indigo-400 rounded" placeholder={product.item_final_price} />
+            <input type="number" name="fPrice" step="any" className="border bg-gray-100 py-2 px-4 w-96 outline-none focus:ring-2 focus:ring-indigo-400 rounded" placeholder={product.item_final_price} />
           </div>
           <div>
             <h1 className="text-start mr-4 text-gray-700 font-bold mb-2">Description</h1>

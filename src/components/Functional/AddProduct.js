@@ -51,9 +51,9 @@ const AddProduct = () => {
           {/* include validation with required or other standard HTML validation rules */}
           <input className="p-2 mt-8 rounded-xl border" placeholder="Item Name" {...register("item_name", { required: true, maxLength:20 })} required/>
 
-          <input className="p-2 rounded-xl border w-full" placeholder="Regular Price" type="number" {...register("item_price")} required/>
-          <input className="p-2 rounded-xl border w-full" placeholder="Discount" type="number" {...register("item_disc_price")} required/>
-          <input className="p-2 rounded-xl border w-full" placeholder="Final Price" type="number" {...register("item_final_price")} required/>
+          <input className="p-2 rounded-xl border w-full" placeholder="Regular Price" type="number" step="any" {...register("item_price")} required/>
+          <input className="p-2 rounded-xl border w-full" placeholder="Discount" type="number" step="any" {...register("item_disc_price")} required/>
+          <input className="p-2 rounded-xl border w-full" placeholder="Final Price" type="number" step="any" {...register("item_final_price")} required/>
           <textarea rows="4" cols="" className="p-2 rounded-xl border w-full" placeholder="Description" {...register("item_description")} required></textarea>
           <input className="p-2 rounded-xl border w-full" placeholder="Photo URL" type="text" {...register("item_img_url")} required/>
 
