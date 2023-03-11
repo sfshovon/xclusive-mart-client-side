@@ -45,10 +45,10 @@ const ManageProductDetails = ({product, products, setProducts}) => {
         <img src={item_img_url} className="md:h-64 md:w-64 py-2 rounded-lg" alt="Product"/>
       </figure>
       <div className="card-body text-justify">
-        <div className="h-20 mb-5">
+        <div className="h-6">
           <h2 className="card-title font-bold">{item_name}</h2>
         </div>
-        <div className="mt-16">
+        <div className="mt-2">
           <div className="mt-2 flex justify-center items-center gap-5">
             <button onClick={ () => handleDelete(_id)} className="bg-red-800 rounded-xl text-gray-200 py-3 px-4 hover:scale-105 duration-300 hover:text-white hover:bg-gray-800">Remove Item</button>
             <button onClick={() => navigateToProductUpdate(_id)} className="bg-teal-800 rounded-xl text-gray-200 py-3 px-4 hover:scale-105 duration-300 hover:text-white hover:bg-gray-800">Update Item</button>
