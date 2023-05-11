@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { toast, ToastContainer } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const UpdateProduct = () => {
   const {productID} = useParams();
- 
   const [itemName, setItemName] = useState("");
   const [itemRegularPrice, setItemRegularPrice] = useState("");
   const [itemDiscountPrice, setItemDiscountPrice] = useState("");
   const [itemFinalPrice, setItemFinalPrice] = useState("");
   const [itemDescription, setItemDescription] = useState("");
   const [itemPhotoURL, setItemPhotoURL] = useState("");
-
   useEffect( () => {
     const url = `https://xclusive-mart-server-side.vercel.app/allProducts/${productID}`;
     fetch(url)
@@ -26,8 +24,6 @@ const UpdateProduct = () => {
       setItemPhotoURL(data?.item_img_url)
     })
   },[productID]);
-  
-
   const handleUpdateProduct = e =>{
     e.preventDefault();
     const updatedProduct = {itemName, itemRegularPrice, itemDiscountPrice, itemFinalPrice, itemDescription, itemPhotoURL};
@@ -35,11 +31,11 @@ const UpdateProduct = () => {
     // send data to the server
     const url = `https://xclusive-mart-server-side.vercel.app/allProducts/${productID}`;
     fetch(url, {
-        method: 'PUT',
-        headers: {
-            'content-type': 'application/json'
-        },
-        body: JSON.stringify(updatedProduct)
+      method: 'PUT',
+      headers: {
+          'content-type': 'application/json'
+      },
+      body: JSON.stringify(updatedProduct)
     })
     .then(res => res.json())
     .then(data =>{
@@ -62,7 +58,6 @@ const UpdateProduct = () => {
     }
 
   return (
-
     <div className="bg-green-100 py-5">
     <form onSubmit={handleUpdateProduct} className="min-h-screen flex items-center">
       <div className="container mx-auto max-w-md shadow-md hover:shadow-lg transition duration-300">
@@ -70,7 +65,6 @@ const UpdateProduct = () => {
           <h1>Update Product Information</h1>
           <h1 className="text-xl">Product: <span className="underline text-teal-600 font-semibold animate-pulse">{itemName}</span></h1>
         </div>
-            
         <div className="py-12 p-10 bg-white rounded-xl">
           <div className="mb-6">
             <h1 className="text-start mr-4 text-gray-700 font-bold mb-2">Item Name</h1>

@@ -5,9 +5,9 @@ import home1 from "../../assets/images/2.jpg";
 import home2 from "../../assets/images/3.jpg";
 import home3 from "../../assets/images/4.jpg";
 import home4 from "../../assets/images/5.jpg";
-import HomeSlider from "../Static/HomeSlider";
-import PageTitle from '../Shared/PageTitle';
 import Footer from "../Shared/Footer";
+import PageTitle from '../Shared/PageTitle';
+import HomeSlider from "../Static/HomeSlider";
 
 const sliderImages = [
   {
@@ -31,9 +31,7 @@ const Home = () => {
   return (
     <div>
       <PageTitle title="Home"/>
-      <HomeSlider sliderImages={sliderImages}>
-  
-      </HomeSlider> 
+      <HomeSlider sliderImages={sliderImages}/>
       <ToastContainer/>
       <Footer/>
     </div>

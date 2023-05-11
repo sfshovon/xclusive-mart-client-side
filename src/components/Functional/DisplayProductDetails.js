@@ -2,22 +2,18 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 const DisplayProductDetails = () => {
+  const navigate = useNavigate();
   const { productID } = useParams();
   const [product, setProduct] = useState({});
-
   useEffect( () => {
     const url = `https://xclusive-mart-server-side.vercel.app/allProducts/${productID}`;
     fetch(url)
     .then(res => res.json())
     .then(data => setProduct(data))
   },[productID]);
-
-  const navigate = useNavigate();
-
   const navigateToProductPage = ( )=>{
       navigate("/products");
   }
-
 
   return (
       <section data-theme="autumn" className="bg-base-200 h-screen pt-12">

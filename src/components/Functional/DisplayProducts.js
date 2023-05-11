@@ -3,9 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 const DisplayProducts = ({product}) => {
   const {_id, item_name, item_img_url, item_price, item_disc_price, item_final_price, item_description} = product;
-
   const navigate = useNavigate();
-
   const navigateToProductDetails = id =>{
       navigate(`/productDetails/${id}`);
   }

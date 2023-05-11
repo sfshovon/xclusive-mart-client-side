@@ -7,13 +7,11 @@ const Products = () => {
   const [pageCount, setPageCount] = useState(0);
   const [page, setPage] = useState(0);
   const [size, setSize] = useState(10);
-
   useEffect( () => {
     fetch(`https://xclusive-mart-server-side.vercel.app/allProducts?page=${page}&size=${size}`)
     .then(res => res.json())
     .then(data => setProducts(data))
   }, [page, size]);
-
   useEffect( () => {
     fetch('https://xclusive-mart-server-side.vercel.app/allProductsCount')
     .then(res => res.json())
@@ -40,18 +38,22 @@ const Products = () => {
         </div>
       </div>
       <div className="flex justify-center mb-5">
-            {
-              [...Array(pageCount).keys()].map(number => (
-                <button onClick={ () => setPage(number) } className={page===number ? "btn btn-sm btn-secondary text-black rounded-full" : "btn btn-sm btn-info text-white rounded-full"}>{number + 1}</button>
-              ))
-            }
-            {products.length>0 &&
-            <select onChange={ e => setSize(e.target.value)}>
-              <option value="10" selected>10</option>
-              <option value="15">15</option>
-              <option value="20">20</option>
-            </select>
-            }
+        {
+          [...Array(pageCount).keys()].map(number => (
+            <button 
+              onClick={ () => setPage(number) } 
+              className={page===number ? "btn btn-sm btn-secondary text-black rounded-full" : "btn btn-sm btn-info text-white rounded-full"}>
+                {number + 1}
+              </button>
+          ))
+        }
+        { products.length>0 &&
+          <select onChange={ e => setSize(e.target.value)}>
+            <option value="10" selected>10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+          </select>
+        }
       </div>
     </section>
   );

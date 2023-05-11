@@ -1,22 +1,18 @@
 import React from 'react';
 import { useAuthState, useSendEmailVerification } from 'react-firebase-hooks/auth';
 import { Navigate, useLocation } from 'react-router-dom';
-import { toast, ToastContainer } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
+import verifyEmail from '../../assets/images/verifyEmail.jpg';
 import auth from '../../firebase.init';
 import PageTitle from '../Shared/PageTitle';
-import verifyEmail from '../../assets/images/verifyEmail.jpg'
 
 const RequireAuth = ({children}) => {
   const [user] = useAuthState(auth);
   const location = useLocation();
-  const [sendEmailVerification] = useSendEmailVerification(
-    auth
-  );
-
+  const [sendEmailVerification] = useSendEmailVerification(auth);
   if(!user){
     return <Navigate to="/login" state={{ from: location }} replace> </Navigate>
   }
-  
   if(user.providerData[0]?.providerId === 'password' && !user.emailVerified){
     return <div data-theme="autumn" className="h-screen bg-teal-900">
       <PageTitle title="Authentication Required"/>
@@ -41,7 +37,6 @@ const RequireAuth = ({children}) => {
       <ToastContainer/>
     </div>
   }
-
   return children;
 };
 

@@ -37,32 +37,21 @@ const AddProduct = () => {
     })
   }
   
-
   return (
     <section data-theme="autumn" className="h-screen">
       <div className="flex justify-center">
         <PageTitle title="Add Product"/>
       <div className="bg-gray-100 w-4/5 md:w-1/4 flex-col rounded-2xl shadow-lg p-5 items-center mt-10">
         <h2 className="font-bold text-2xl text-[#002D74] text-center">Add A Product</h2>
-
-        {/* "handleSubmit" will validate your inputs before invoking "onSubmit"  */}
         <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
-          {/* register your input into the hook by invoking the "register" function */}
-          {/* include validation with required or other standard HTML validation rules */}
           <input className="p-2 mt-8 rounded-xl border" placeholder="Item Name" {...register("item_name", { required: true, maxLength:20 })} required/>
-
           <input className="p-2 rounded-xl border w-full" placeholder="Regular Price" type="number" step="any" {...register("item_price")} required/>
           <input className="p-2 rounded-xl border w-full" placeholder="Discount" type="number" step="any" {...register("item_disc_price")} required/>
           <input className="p-2 rounded-xl border w-full" placeholder="Final Price" type="number" step="any" {...register("item_final_price")} required/>
           <textarea rows="4" cols="" className="p-2 rounded-xl border w-full" placeholder="Description" {...register("item_description")} required></textarea>
           <input className="p-2 rounded-xl border w-full" placeholder="Photo URL" type="text" {...register("item_img_url")} required/>
-
           <button type="submit" className="bg-teal-800 rounded-xl text-gray-200 py-2 hover:scale-105 duration-300 hover:text-white hover:bg-gray-800"> Add <FontAwesomeIcon icon={faAdd}></FontAwesomeIcon></button>
-          {/* errors will return when field validation fails  */}
-          {/* {errors.exampleRequired && <span>This field is required</span>} */}
         </form>
-
-        
       </div>
       </div>
       <ToastContainer/>

@@ -32,9 +32,7 @@ const ManageProductDetails = ({product, products, setProducts}) => {
       })
     }
   }
-
   const navigate = useNavigate();
-
   const navigateToProductUpdate = id =>{
       navigate(`/updateProduct/${id}`);
   }
